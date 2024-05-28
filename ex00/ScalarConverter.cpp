@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:23:06 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/28 17:12:59 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:14:58 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ ScalarConverter& ScalarConverter::operator=( ScalarConverter const& )
 {
 	return (*this);
 }
-
-# define INFPOS 0x7f800000
-# define INFNEG 0xff800000
 
 static void	checkerValue(double res, t_scalarData *data)
 {
@@ -81,6 +78,8 @@ static bool	goodSyntax(std::string const& str)
 	}
 	return (syntax);
 }
+
+// add + for inf 
 
 static double	getResult(std::string const& str,
 	t_scalarData *data)

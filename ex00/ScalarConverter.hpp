@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:59:23 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/28 13:58:33 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:15:16 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <cmath>
 
 # define SCALAR_SIZE 4
+# define INFPOS 0x7f800000
+# define INFNEG 0xff800000
 
 typedef	std::string t_scalarData;
 
