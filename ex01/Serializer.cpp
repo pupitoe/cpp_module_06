@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 19:05:56 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/30 13:24:40 by tlassere         ###   ########.fr       */
+/*   Created: 2024/05/30 13:27:35 by tlassere          #+#    #+#             */
+/*   Updated: 2024/05/30 13:32:16 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Serializer.hpp"
 
-#include "ScalarConverter.hpp"
-
-int	main(int argc, char **argv)
+Serializer::Serializer(void)
 {
-	if (argc == 2)
-		ScalarConverter::convert(argv[1]);
-	else
-		std::cout << "Invalide argument" << std::endl;
+	return ;
 }
+
+Serializer::~Serializer(void)
+{
+	return ;
+}
+
+Serializer::Serializer( Serializer const& )
+{
+	return ;
+}
+
+Serializer& Serializer::operator=(Serializer const& )
+{
+	return (*this);
+}
+

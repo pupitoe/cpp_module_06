@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:23:06 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/28 17:14:58 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:58:17 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static bool	goodSyntax(std::string const& str)
 	return (syntax);
 }
 
-// add + for inf 
+// TODO: add + for inf 
 
 static double	getResult(std::string const& str,
 	t_scalarData *data)
