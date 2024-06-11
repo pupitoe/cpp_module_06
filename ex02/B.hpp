@@ -11,14 +11,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef B_CPP
-# define B_CPP
+#ifndef B_HPP
+# define B_HPP
 
 #include "Base.hpp"
 class Base;
 
 class B: public Base
 {
+	public:
+		~B(void);
 };
 
 #endif

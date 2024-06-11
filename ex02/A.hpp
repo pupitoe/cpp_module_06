@@ -6,18 +6,20 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:05:05 by tlassere          #+#    #+#             */
-/*   Updated: 2024/06/11 14:06:54 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/06/11 16:32:59 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef A_CPP
-# define A_CPP
+#ifndef A_HPP
+# define A_HPP
 
 #include "Base.hpp"
 class Base;
 
 class A: public Base
 {
+	public:
+		~A();
 };
 
 #endif
