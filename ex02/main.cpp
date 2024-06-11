@@ -12,8 +12,18 @@
 
 #include "Base.hpp"
 #include "generator.hpp"
+#include <iostream>
 
 int	main(void)
 {
+	Base	*misterius;
+
+	misterius = generate();
+	if (misterius)
+	{
+		delete misterius;
+	}
+	else
+		std::cout << "An error was occured" << std::endl;
 	return (0);
 }
