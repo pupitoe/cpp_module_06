@@ -12,7 +12,6 @@
 
 #include "Base.hpp"
 #include "generator.hpp"
-#include <iostream>
 
 int	main(void)
 {
