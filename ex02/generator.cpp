@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   generator.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 13:27:06 by tlassere          #+#    #+#             */
-/*   Updated: 2024/06/11 14:10:58 by tlassere         ###   ########.fr       */
+/*   Created: 2024/06/11 14:16:20 by tlassere          #+#    #+#             */
+/*   Updated: 2024/06/11 14:18:32 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#include "generator.hpp"
 
-# include <cstring>
-# include <iostream>
-# include "Data.hpp"
-
-typedef	unsigned long uintptr_t;
-
-class	Serializer
+Base * generate(void)
 {
-	private:
-		Serializer(void);
-		~Serializer(void);
-		Serializer( Serializer const& cpy );
-		Serializer&	operator=( Serializer const& cpy );
+	Base	*result;
 
-	public:
-		static uintptr_t	serialize(Data* ptr);
-		static Data*		deserialize(uintptr_t raw);
-};
-
-#endif
+	result = NULL;
+	
+	return (result);
+}

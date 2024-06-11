@@ -46,6 +46,6 @@ int	main(void)
 	bufferData = Serializer::deserialize(buffer);
 	print_val(&data, buffer, bufferData);
 	std::cout << "data ptr content: florian: " << bufferData->florian
-		<< " lionel: " << bufferData->lionel << " obamas: " << bufferData->obamas
-		<< std::endl;
+		<< " lionel: " << bufferData->lionel << " obamas: "
+		<< bufferData->obamas << std::endl;
 }

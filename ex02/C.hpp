@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 13:27:06 by tlassere          #+#    #+#             */
-/*   Updated: 2024/06/11 14:10:58 by tlassere         ###   ########.fr       */
+/*   Created: 2024/06/11 14:05:05 by tlassere          #+#    #+#             */
+/*   Updated: 2024/06/11 14:07:48 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#ifndef C_CPP
+# define C_CPP
 
-# include <cstring>
-# include <iostream>
-# include "Data.hpp"
+#include "Base.hpp"
+class Base;
 
-typedef	unsigned long uintptr_t;
-
-class	Serializer
+class C: public Base
 {
-	private:
-		Serializer(void);
-		~Serializer(void);
-		Serializer( Serializer const& cpy );
-		Serializer&	operator=( Serializer const& cpy );
-
-	public:
-		static uintptr_t	serialize(Data* ptr);
-		static Data*		deserialize(uintptr_t raw);
 };
 
 #endif

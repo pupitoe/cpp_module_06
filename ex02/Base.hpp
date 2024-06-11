@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 13:27:06 by tlassere          #+#    #+#             */
-/*   Updated: 2024/06/11 14:10:58 by tlassere         ###   ########.fr       */
+/*   Created: 2024/06/11 13:54:38 by tlassere          #+#    #+#             */
+/*   Updated: 2024/06/11 14:14:43 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
-# include <cstring>
-# include <iostream>
-# include "Data.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-typedef	unsigned long uintptr_t;
-
-class	Serializer
+class	Base
 {
 	private:
-		Serializer(void);
-		~Serializer(void);
-		Serializer( Serializer const& cpy );
-		Serializer&	operator=( Serializer const& cpy );
+		Base(void);
+		Base(Base const& cpy);
+		Base&	operator=(Base const& cpy);
 
-	public:
-		static uintptr_t	serialize(Data* ptr);
-		static Data*		deserialize(uintptr_t raw);
+	private:
+		virtual ~Base(void);
 };
 
-#endif
+# endif
