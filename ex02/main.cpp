@@ -29,5 +29,18 @@ int	main(int argc, char **)
 		else
 			std::cout << "An error was occured" << std::endl;
 	}
+	else
+	{
+		A	ah;
+		B	biensur;
+		C	cie_sauteuse;
+
+		identify(ah);
+		identify(&ah);
+		identify(biensur);
+		identify(&biensur);
+		identify(cie_sauteuse);
+		identify(&cie_sauteuse);
+	}
 	return (0);
 }
