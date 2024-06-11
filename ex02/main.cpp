@@ -13,16 +13,21 @@
 #include "Base.hpp"
 #include "generator.hpp"
 
-int	main(void)
+int	main(int argc, char **)
 {
-	Base	*misterius;
-
-	misterius = generate();
-	if (misterius)
+	if (argc == 1)
 	{
-		delete misterius;
+		Base	*misterius;
+
+		misterius = generate();
+		if (misterius)
+		{
+			identify(misterius);
+			identify(*misterius);
+			delete misterius;
+		}
+		else
+			std::cout << "An error was occured" << std::endl;
 	}
-	else
-		std::cout << "An error was occured" << std::endl;
 	return (0);
 }

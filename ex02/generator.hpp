@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:14:53 by tlassere          #+#    #+#             */
-/*   Updated: 2024/06/11 16:58:47 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/06/11 19:44:43 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ class	Base;
 
 Base * generate(void);
 void identify(Base* p);
+void identify(Base& p);
 
 #endif
