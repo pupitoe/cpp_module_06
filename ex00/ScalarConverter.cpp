@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:23:06 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/30 12:58:17 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/06/20 13:37:05 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static void	checkerValue(double res, t_scalarData *data)
 	if (res < 32 || res > 126)
 		data[0] = "Non displayable";
 	// res != res to check is NaN
-	// res == (res -1) to check is infinity;
 	if (res != res || check_inf == INFPOS || check_inf == INFNEG)
 	{
 		data[0] = "impossible";
@@ -50,19 +49,45 @@ static void	checkerValue(double res, t_scalarData *data)
 		data[1] = "impossible";
 }
 
+static bool	cmp_special_caracter(std::string const& special,
+	std::string const& cmp)
+{
+	bool		ret;
+	std::string	plus_test;
+	std::string	negatif_test;
+	
+	ret = false;
+	plus_test = "+" + cmp;
+	negatif_test = "-" + cmp;
+	if (special == plus_test || special == negatif_test || special == cmp)
+		ret = true;
+	return (ret);
+}
+
+static bool	check_special_caracter(std::string const& special)
+{
+	bool	ret;
+	std::string	special_car[2] = {"nan", "inf"};
+
+	ret = false;
+	for (int i = 0; i < 2 && ret == false; i++)
+	{
+		ret |= cmp_special_caracter(special, special_car[i]);
+		special_car[i] += "f";
+		ret |= cmp_special_caracter(special, special_car[i]);
+	}
+	return (ret);
+}
+
 static bool	goodSyntax(std::string const& str)
 {
 	int			syntax;
 	std::string	unic = "+-.f";
 
 	syntax = true;
-	if (str.length() > 1 )
+	if (str.length() > 1 && !check_special_caracter(str))
 	{
-		if (str.find_last_not_of("+0123654789.-f") < str.length()
-			&& str != "inf" && str != "+inf" && str != "-inf"
-			&& str != "inff" && str != "+inff" && str != "-inff"
-			&& str != "nan" && str != "+nan" && str != "-nan"
-			&& str != "nanf" && str != "+nanf" && str != "-nanf")
+		if (str.find_last_not_of("+0123654789.-f") < str.length())
 			syntax = false;
 		else if ((str.find_last_of("+-") != 0
 			&& str.find_last_of("+-") < str.length())
@@ -79,8 +104,6 @@ static bool	goodSyntax(std::string const& str)
 	return (syntax);
 }
 
-// TODO: add + for inf 
-
 static double	getResult(std::string const& str,
 	t_scalarData *data)
 {
@@ -90,7 +113,7 @@ static double	getResult(std::string const& str,
 	if (goodSyntax(str) && str.length() != 0)
 	{
 		result = str[0];
-		if (str.length() > 1 || str.find("0123456789") < str.length())
+		if (str.length() > 1 || str.find_first_of("0123456789") < str.length())
 			result = std::strtod(str.c_str(), NULL);
 		checkerValue(result, data);
 	}
